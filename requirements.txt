@@ -1,0 +1,8 @@
+matplotlib
+streamlit==0.70.0
+tensorflow
+nltk
+seaborn
+sklearn
+xgboost
+lightgbm
