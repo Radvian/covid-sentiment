@@ -5,9 +5,9 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # nltk package
+import nltk
 from nltk.stem import LancasterStemmer, SnowballStemmer, RegexpStemmer, WordNetLemmatizer 
 #this was part of the NLP notebook
-import nltk
 nltk.download('punkt')
 
 # import sentence tokenizer
@@ -92,9 +92,6 @@ def main():
 
     # remove emoji
 
-    def char_is_emoji(character):
-        return character in emoji.UNICODE_EMOJI
-
     def text_has_emoji(text):
         for character in text:
             if character in emoji.UNICODE_EMOJI:
@@ -164,7 +161,7 @@ def main():
         # getting rid of whitespaces
         df_input['cleaned_tweet'] = df_input['cleaned_tweet'].apply(lambda x: x.replace('\n', ' '))
         # remove links
-        df_input['cleaned_tweet'] = df_input['cleaned_tweet'].str.replace('http\S+|www.\S+', '', case=False)
+        df_input['cleaned_tweet'] = df_input['cleaned_tweet'].str.replace(r'http\S+|www.\S+', '', case=False)
         # removing '>'
         df_input['cleaned_tweet'] = df_input['cleaned_tweet'].apply(lambda x: x.replace('&gt;', ''))
         # removing '<'
@@ -315,6 +312,7 @@ def main():
             five: 'Extremely Positive', 'Positive', 'Neutral', 'Negative', 'Extremely Negative'. However, in this exercise, we're combining 'Extremely Positive' \
             with 'Positive', and 'Extremely Negative' with 'Negative'. ")
         st.markdown("This is the distribution of the number of tweets:")
+
         fig, ax = plt.subplots()
         ax = sns.countplot(x = 'Sentiment', data = data)
         st.pyplot(fig)
