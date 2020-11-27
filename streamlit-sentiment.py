@@ -257,6 +257,8 @@ def main():
     if pages == "Home Page":
         
         st.title('Welcome to COVID-19 Tweet Sentiment Classification Project!')
+        st.image('twitter.png', width = 600)
+        st.markdown("Please open the sidebar and navigate to any pages you'd like. Enjoy!")
     
     elif pages == "Tweet Sentiment Classifier":
 
