@@ -6,3 +6,4 @@ seaborn
 sklearn
 xgboost
 lightgbm
+emoji
