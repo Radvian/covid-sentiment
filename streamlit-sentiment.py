@@ -307,7 +307,7 @@ def main():
         st.markdown('The raw Kaggle dataset is first cleaned, tokenized, and vectorized before being fed into ML/DL algorithm to train models.')
         st.markdown('There are 3 classes: Positive, Neutral, and Negative emotion(s).')
         st.markdown('There are 3 models deployed: Logistic Regression, Light GBM Classifier, and a Deep Learning model with Bidirectional LSTM layer.')
-        st.markdown('The best performing model is the Deep Learning model, with 0.83 accuracy on test set'.)
+        st.markdown('The best performing model is the Deep Learning model, with 0.83 accuracy on test set.')
         st.subheader('Process')
         st.markdown('The dataset is taken from [this](https://www.kaggle.com/datatattle/covid-19-nlp-text-classification) Kaggle dataset.')
         st.markdown("In total (combining both train and test csv files) there are 44,955 tweets scraped from Twitter throughout 2020. \
