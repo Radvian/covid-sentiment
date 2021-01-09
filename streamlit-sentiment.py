@@ -290,10 +290,6 @@ def main():
             predict_proba(dl_nlp, pad, deep_learning = True)
             st.subheader('Logistic Regression')
             predict_proba(lr, vector)
-            st.subheader('Decision Tree')
-            predict_proba(dt, vector)
-            st.subheader('XGBoost Classifier')
-            predict_proba(xgb, vector)
             st.subheader('Light GBM Classifier')
             predict_proba(lgb, vector)        
             
@@ -307,6 +303,12 @@ def main():
         else:
             pass
 
+        st.subheader('Brief Summary')
+        st.markdown('The raw Kaggle dataset is first cleaned, tokenized, and vectorized before being fed into ML/DL algorithm to train models.')
+        st.markdown('There are 3 classes: Positive, Neutral, and Negative emotion(s).')
+        st.markdown('There are 3 models deployed: Logistic Regression, Light GBM Classifier, and a Deep Learning model with Bidirectional LSTM layer.')
+        st.markdown('The best performing model is the Deep Learning model, with 0.83 accuracy on test set'.)
+        st.subheader('Process')
         st.markdown('The dataset is taken from [this](https://www.kaggle.com/datatattle/covid-19-nlp-text-classification) Kaggle dataset.')
         st.markdown("In total (combining both train and test csv files) there are 44,955 tweets scraped from Twitter throughout 2020. \
             These tweets are talking about the COVID-19 pandemic.") 
@@ -351,11 +353,9 @@ def main():
         st.markdown('Training and evaluation on different train-test splits, as well as different random state \
             might give slightly different result.')
         
-        st.markdown('Rank of best performing ML models:')
+        st.markdown('Performance of ML Models:')
         st.markdown('- Logistic Regression with accuracy of 0.78')
         st.markdown('- Light GBM Classifier with accuracy of 0.78')
-        st.markdown('- Decision Tree Classifier with accuracy of 0.65')
-        st.markdown('- XGBoost Classifier with accuracy of 0.63')
         st.markdown('To see the detailed classification report (f1 score, recall, precision), \
             please look at the google colab/jupyter notebook.')
 
