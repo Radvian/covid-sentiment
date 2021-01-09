@@ -264,8 +264,7 @@ def main():
 
         st.title('COVID-19 Tweet Sentiment Classifier')
         st.subheader('Premise')
-        st.write("Four machine learning algorithms (Logistic Regression, Decision Tree, XGBoost Classifier, \
-            and Light GBM Classifier) and a TensorFlow-Keras deep learning model were trained on a set of labeled tweets \
+        st.write("Two ML algorithms (Logistic Regression, Light GBM Classifier) and a TensorFlow-Keras deep learning model were trained on a set of labeled tweets \
             about COVID-19 from a Kaggle dataset. Each tweet is labeled as having 'Positive', 'Neutral', or 'Negative' sentiment.")
         st.write("A train-test split evaluation indicates that our deep learning model performed the best.")
         st.write("Now, let's try to test these classifiers on your imaginary tweets.")
